@@ -2,6 +2,15 @@
   "name": "account-buy-site",
   "version": "1.0.0",
   "description": "Site.",
+  "scripts": {
+    "start": "ice start --speedup",
+    "build": "ice build",
+    "deploy": "git pull && npm i && npm run build",
+    "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"src/**/*.{css,scss,less}\" --cache",
+    "stylelint:fix": "npm run stylelint -- --fix"
+  },
   "dependencies": {
     "@alifd/next": "^1.26.8",
     "@alifd/theme-design-pro": "^0.8.0",
@@ -22,17 +31,5 @@
     "eslint": "^8.35.0",
     "stylelint": "^15.2.0",
     "typescript": "5.8.3"
-  },
-  "scripts": {
-    "start": "ice start --speedup",
-    "build": "ice build",
-    "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
-    "eslint:fix": "npm run eslint -- --fix",
-    "stylelint": "stylelint \"src/**/*.{css,scss,less}\" --cache",
-    "stylelint:fix": "npm run stylelint -- --fix"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "git@github.com:ice-lab/react-materials.git"
+  }
 }
