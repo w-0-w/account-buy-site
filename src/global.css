@@ -1,0 +1,16 @@
+@import '@alifd/theme-design-pro/variables.css';
+@import '@alifd/theme-design-pro/dist/next.var.css';
+
+:root {
+  --g-main-color: #000;
+  --g-padding: 16px;
+  --g-main-lg-bg: linear-gradient(to right, #666, #000);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.next-loading {
+  position: unset;
+}

@@ -1,0 +1,13 @@
+.bizLogoWrap {
+  position: relative;
+  width: 102px;
+  height: 40px;
+  /* aspect-ratio: 762 / 300; */
+}
+
+.bizLogoImg {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

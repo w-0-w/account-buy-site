@@ -1,0 +1,18 @@
+.bizLangSwitchWrap {
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.bizLangSwitchInner {
+  color: #fff;
+}
+
+.bizLangSwitchSplit {
+  color: #999;
+  margin: 0 3px;
+}
