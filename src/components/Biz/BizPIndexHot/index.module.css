@@ -1,0 +1,105 @@
+:root {
+  --goods-hot-gap: 16px;
+  --goods-hot-last-width: calc(var(--g-page-padding) - var(--goods-hot-gap));
+}
+
+.bizPIndexHotWrap {
+  position: relative;
+  width: 100%;
+  background-color: var(--shell-dark-header-background);
+  overflow-x: auto;
+}
+
+.bizPIndexHotGoodsList {
+  display: flex;
+  flex-direction: row;
+  gap: var(--goods-hot-gap);
+  min-width: 100%;
+  padding: var(--g-page-padding);
+}
+
+.bizPIndexHotGoodsItem {
+  flex: none;
+  position: relative;
+  width: 26vw;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bizPIndexHotGoodsItemLastFake {
+  flex: none;
+  width: var(--goods-hot-last-width);
+}
+
+.bizPIndexHotGoodsItemBg {
+  position: absolute;
+  width: 100%;
+  top: 6px;
+  left: 0;
+  z-index: 0;
+}
+.bizPIndexHotGoodsItemBg2 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 0;
+}
+.bizPIndexHotGoodsItemReal {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.bizPIndexHotGoodsItemIcon {
+  position: relative;
+  width: 100%;
+  height: 14vw;
+  margin-top: var(--g-sm-bs-padding);
+}
+
+.bizPIndexHotGoodsItemIconImg {
+  position: absolute;
+  width: 14vw;
+  height: 14vw;
+  top: 0;
+  left: var(--g-normal-padding);
+  border-radius: 8px;
+  box-shadow: var(--g-sm-box-shadow);
+}
+
+.bizPIndexHotGoodsItemLabel {
+  width: calc(100% - var(--g-normal-padding) * 2);
+  /* lineHeight * 2 */
+  height: 36px;
+  margin: var(--g-normal-padding) auto 0;
+  line-height: 18px;
+  word-break: break-word;
+}
+
+.bizPIndexHotGoodsItemPrice {
+  width: calc(100% - var(--g-normal-padding) * 2);
+  height: 22px;
+  margin: calc(var(--g-normal-padding) / 2) auto 0;
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+}
+.bizPIndexHotGoodsItemPriceSymbol {
+  vertical-align: middle;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.bizPIndexHotGoodsItemBuy {
+  width: calc(100% - var(--g-normal-padding) * 2);
+  margin: calc(var(--g-normal-padding) / 2) auto var(--g-normal-padding);
+}
+
+.bizPIndexHotGoodsItemBuyBtn {
+  width: 100%;
+  background: var(--g-main-lg-bg) !important;
+}

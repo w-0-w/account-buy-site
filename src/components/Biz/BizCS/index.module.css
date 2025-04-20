@@ -4,7 +4,7 @@
   align-items: center;
   position: fixed;
   bottom: 100px;
-  right: var(--g-padding);
+  right: var(--g-normal-padding);
   width: 50px;
   height: 50px;
   background: var(--g-main-lg-bg);

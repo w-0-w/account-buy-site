@@ -1,0 +1,42 @@
+.bizPIndexTabsWrap :global {
+  position: relative;
+  width: 100%;
+  /* height: 40px; */
+  /* aspect-ratio: 762 / 300; */
+  /* .next-tabs-nav {
+    margin: 0 var(--g-page-padding);
+  } */
+  .next-tabs-bar {
+    /* margin: 0 var(--g-page-padding) !important; */
+    border-color: transparent !important;
+  }
+  .next-tabs-nav-container-scrolling {
+    padding: 0 !important;
+  }
+  .next-tabs-tab {
+    &::before {
+      border-color: var(--g-main-color) !important;
+    }
+    .next-tabs-tab-inner {
+      font-size: 15px !important;
+    }
+    &.active {
+      color: var(--g-main-color) !important;
+      /* &::before {
+        border-color: var(--g-main-color) !important;
+      } */
+      .next-tabs-tab-inner {
+        font-size: 18px !important;
+        font-weight: bold !important;
+      }
+    }
+  }
+  .next-tabs-btn-prev,
+  .next-tabs-btn-next {
+    display: none !important;
+  }
+  .next-tabs-content {
+    width: calc(100% - var(--g-page-padding) * 2);
+    margin: calc(var(--g-page-padding) / 2) var(--g-page-padding);
+  }
+}

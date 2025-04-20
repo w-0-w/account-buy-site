@@ -3,14 +3,30 @@
 
 :root {
   --g-main-color: #000;
-  --g-padding: 16px;
-  --g-main-lg-bg: linear-gradient(to right, #666, #000);
+  /* --g-main-lg-bg: linear-gradient(to right, #666, #000); */
+  --g-main-lg-bg: #000;
+  --g-normal-padding: 16px;
+  --g-normal-round: 8px;
+  --g-normal-border: 1px solid #eee;
+  --g-sm-bs-padding: 1px;
+  --g-sm-box-shadow: 1px 1px var(--g-sm-bs-padding) #ddd;
+  --g-page-padding: 22px;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
 .next-loading {
   position: unset;
+}
+
+.next-shell-content {
+  padding: 0 !important;
 }
