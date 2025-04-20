@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ice start --speedup",
     "build": "ice build",
-    "server": "serve -l 3456",
+    "server": "serve -l 3456 build",
     "deploy": "git pull && npm i && npm run build && npm run server",
     "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
     "eslint:fix": "npm run eslint -- --fix",
@@ -30,6 +30,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "eslint": "^8.35.0",
+    "serve": "^14.2.4",
     "stylelint": "^15.2.0",
     "typescript": "5.8.3"
   }
