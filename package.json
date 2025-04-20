@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ice start --speedup",
     "build": "ice build",
-    "server": "serve -l 3456 build",
+    "server": "serve -l 3456 build --no-request-logging",
     "deploy": "git pull && npm i && npm run build && npm run server",
     "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
     "eslint:fix": "npm run eslint -- --fix",
