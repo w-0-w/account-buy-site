@@ -6,7 +6,8 @@
     "start": "ice start --speedup",
     "build": "ice build",
     "server": "serve -l 3456 build --no-request-logging",
-    "deploy": "git pull && npm i && npm run build && npm run server",
+    "node:server": "node serve.js",
+    "deploy": "git pull && npm i && npm run build && npm run node:server",
     "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
     "eslint:fix": "npm run eslint -- --fix",
     "stylelint": "stylelint \"src/**/*.{css,scss,less}\" --cache",
@@ -20,7 +21,8 @@
     "moment": "^2.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.8.9"
+    "react-intl": "^6.8.9",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "@applint/spec": "^1.2.3",
@@ -30,7 +32,6 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "eslint": "^8.35.0",
-    "serve": "^14.2.4",
     "stylelint": "^15.2.0",
     "typescript": "5.8.3"
   }
