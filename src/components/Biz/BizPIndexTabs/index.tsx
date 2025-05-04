@@ -1,17 +1,23 @@
 import { Tab } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
-import { useLocale, useNavigate } from 'ice';
+// import { FormattedMessage } from 'react-intl';
+import {
+  //
+  useLocale,
+  // useNavigate,
+} from 'ice';
 import { useState, useEffect } from 'react';
 
 import { BizTinyCard } from '@/components/Biz/BizTinyCard';
 
-import { Data, TabItem } from '@/data';
+import { Data } from '@/data';
 
 import styles from './index.module.css';
 
 export const BizPIndexTabs = () => {
+  const INIT_IDX = 1;
+
   const [locale] = useLocale();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [currencySymbol, setCurrencySymbol] = useState('');
   const [tabList, setTabList] = useState<null | any[]>(null);
@@ -21,7 +27,7 @@ export const BizPIndexTabs = () => {
     if (locale) {
       setCurrencySymbol(locale === 'zh-CN' ? '¥' : '$');
       setTabList(Data?.[locale]?.categories || []);
-      setTabItemData(TabItem.accountBuy_2);
+      setTabItemData(Data?.[locale]?.tabItem?.[`accountBuy_${INIT_IDX}`]);
     }
   }, [locale]);
 
@@ -29,19 +35,18 @@ export const BizPIndexTabs = () => {
     <Tab
       shape="pure"
       size="small"
-      defaultActiveKey="2"
+      defaultActiveKey={`${INIT_IDX}`}
       className={styles.bizPIndexTabsWrap}
       onChange={(key) => {
-        setTabItemData(TabItem[`accountBuy_${key}`]);
+        setTabItemData(Data?.[locale]?.tabItem?.[`accountBuy_${key}`]);
       }}
     >
-      {(tabList || []).map((tabItem, tabIdx) => {
+      {(tabList || []).map((tabItem) => {
         return (
           <Tab.Item
             key={tabItem.id}
             title={tabItem.name}
           >
-            {/* This is home page - {tabIdx} */}
             {/* <FormattedMessage id="com-ok" /> */}
             {(tabItemData || []).map((tidItem, tidIdx) => {
               return (

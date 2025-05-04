@@ -5,7 +5,8 @@ type T_I18N_Item =
   | 'com-404'
   | 'com-404-desc'
   | 'biz-buy-btn'
-  | 'biz-goods-sales';
+  | 'biz-goods-sales'
+  | 'biz-buy-now';
 
 export const i18n: Record<T_I18N_LNG, Record<T_I18N_Item, string>> = {
   'en-US': {
@@ -15,6 +16,7 @@ export const i18n: Record<T_I18N_LNG, Record<T_I18N_Item, string>> = {
     'com-404-desc': '404',
     'biz-buy-btn': 'Buy',
     'biz-goods-sales': 'Sales',
+    'biz-buy-now': '${price} Buy Now',
   },
   'zh-CN': {
     'com-ok': '确认',
@@ -23,5 +25,6 @@ export const i18n: Record<T_I18N_LNG, Record<T_I18N_Item, string>> = {
     'com-404-desc': '404',
     'biz-buy-btn': '购买',
     'biz-goods-sales': '月售',
+    'biz-buy-now': '¥{price} 立即购买',
   },
 };

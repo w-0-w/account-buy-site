@@ -3,14 +3,21 @@
 
 :root {
   --g-main-color: #000;
-  /* --g-main-lg-bg: linear-gradient(to right, #666, #000); */
-  --g-main-lg-bg: #000;
+  --g-main-lg-bg: linear-gradient(to right, #666, #000);
+  /* --g-main-lg-bg: #000; */
   --g-normal-padding: 16px;
   --g-normal-round: 8px;
   --g-normal-border: 1px solid #eee;
   --g-sm-bs-padding: 1px;
   --g-sm-box-shadow: 1px 1px var(--g-sm-bs-padding) #ddd;
   --g-page-padding: 22px;
+}
+
+html, body, #ice-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
 }
 
 body {
@@ -29,4 +36,12 @@ body::-webkit-scrollbar {
 
 .next-shell-content {
   padding: 0 !important;
+}
+
+.next-tag-group {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+.next-tag.next-tag-checkable {
+  /*  */
 }

@@ -10,7 +10,7 @@ export const BizTinyCard = ({
   currencySymbol,
 }: {
   idx: number;
-  info: any;
+  info: TypeTabItem;
   currencySymbol: string;
 }) => {
   const navigate = useNavigate();
