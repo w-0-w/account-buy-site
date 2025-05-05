@@ -2,9 +2,9 @@ const NAME = '账号易购';
 const DESC = `${NAME},提供appleid购买,苹果id购买,推特账号购买,电报Telegram账号购买,TikTok账号购买,各类游戏,社交媒体账号购买批发,购买账号就找${NAME}.`;
 const SITE_URL = 'https://www.accountbuy.cc/';
 
-export const PageMeta = [
+const pageMeta = [
   // <meta charset="UTF-8">
-  { charset: 'UTF-8' },
+  { charSet: 'UTF-8' },
   // <meta http-equiv="X-UA-Compatible" content="IE=edge">
   { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' },
   // <meta name="viewport"
@@ -58,7 +58,11 @@ export const PageMeta = [
   },
   // <meta data-react-helmet="true" property="og:image"
   //   content="https://files.accountboy.com/demon/ablogo-2b1fd2a561c84270b1d1625eee5b8d11.png">
-  // {},
+  // {
+  //   property: 'og:image',
+  //   content:
+  //     'https://pbs.twimg.com/media/Gp8Mng8awAEl-Sa?format=png&name=900x900',
+  // },
   // <meta data-react-helmet="true" name="robots"
   //   content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
   {
@@ -67,3 +71,22 @@ export const PageMeta = [
       'follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large',
   },
 ];
+
+export const Conf = {
+  '/': {
+    title: '账号易购',
+    pageMeta,
+  },
+  '/detail': {
+    title: '详情',
+    pageMeta,
+  },
+  '/order': {
+    title: '下单',
+    pageMeta,
+  },
+  '/flow': {
+    title: '立即支付',
+    pageMeta,
+  },
+};
