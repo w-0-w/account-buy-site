@@ -14,6 +14,8 @@ const server = http.createServer((request, response) => {
     // 页面静态处理
     rewrites: [
       { source: 'detail/**', destination: '/index.html' },
+      { source: 'order/**', destination: '/index.html' },
+      { source: 'flow/**', destination: '/index.html' },
       { source: 'en-US/**', destination: '/index.html' },
     ],
   });
