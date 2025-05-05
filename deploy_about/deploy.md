@@ -21,6 +21,8 @@ chmod -R 777 ./build
 user root;
 
 ```bash
+# https://zhuanlan.zhihu.com/p/15685308934
+
 # 查看列表
 screen -ls
 
@@ -29,6 +31,9 @@ screen -r fe_next
 
 # 回到主界面
 ctrl + a,d
+
+# 这将启动一个新的 screen 会话并为其命名，有助于在多个会话之间进行区分。
+screen -S session_name
 ```
 
 * Screen 的状态有两种，Attached 和 Detached，分别表示前台运行和后台运行。

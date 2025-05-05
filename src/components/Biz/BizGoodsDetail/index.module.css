@@ -27,7 +27,41 @@
 }
 
 .bizGoodsDetailTopRight {
-  /*  */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bizGoodsDetailTopRightName {
+  color: var(--g-text-black-color);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+.bizGoodsDetailTopRightPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 20px;
+}
+
+.bizGoodsDetailTopRightPriceCurrency {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 14px;
+}
+.bizGoodsDetailTopRightPriceReal {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+}
+.bizGoodsDetailTopRightPriceOriginal {
+  margin-left: 8px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #999;
+  text-decoration: line-through;
 }
 
 .bizGoodsDetailSku {
@@ -60,7 +94,7 @@
   left: 0;
   bottom: 0;
   padding: 0 12px;
-  background-color: #fff;
+  background-color: var(--g-main-bg-color);
   box-shadow: 0px -2px 8px #ddd;
 }
 
@@ -77,7 +111,7 @@
   background: var(--g-main-lg-bg);
   border-radius: 4px;
   text-align: center;
-  color: #fff;
+  color: var(--g-text-white-color);
   font-size: 14px;
   line-height: 36px;
   /* font-weight: bold; */

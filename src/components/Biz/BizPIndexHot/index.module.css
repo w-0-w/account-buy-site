@@ -44,7 +44,7 @@
   height: 50%;
   left: 0;
   bottom: 0;
-  background-color: #fff;
+  background-color: var(--g-main-bg-color);
   z-index: 0;
 }
 .bizPIndexHotGoodsItemReal {

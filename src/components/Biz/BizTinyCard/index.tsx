@@ -1,6 +1,8 @@
 import { useNavigate } from 'ice';
 import { FormattedMessage } from 'react-intl';
 
+import { useBiz } from '@/hooks';
+
 import styles from './index.module.css';
 
 export const BizTinyCard = ({
@@ -13,6 +15,7 @@ export const BizTinyCard = ({
   info: TypeTabItem;
   currencySymbol: string;
 }) => {
+  const { routePrefix } = useBiz();
   const navigate = useNavigate();
   return (
     <div
@@ -26,7 +29,7 @@ export const BizTinyCard = ({
       }
       onClick={(evt) => {
         evt.stopPropagation();
-        navigate(`/detail/${info?.shortEn}`);
+        navigate(`${routePrefix}/detail/${info?.shortEn}`);
       }}
     >
       <div className={styles.bizTinyCardInner}>

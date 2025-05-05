@@ -1,39 +1,47 @@
-import { useParams } from 'ice';
+import { useLocale, useParams } from 'ice';
 import { useState, useEffect } from 'react';
-import { ResponsiveGrid } from '@alifd/next';
 import { injectIntl } from 'react-intl';
 
-import { queryTest } from '@/api';
+import { queryGoodsDetail } from '@/api';
 
+import { Loading } from '@/components/Loading';
 import { BizGoodsDetail } from '@/components/Biz/BizGoodsDetail';
 
 import styles from './index.module.css';
 
 function PageDetail() {
+  const [locale] = useLocale();
   const params = useParams();
 
+  const [pageLoading, setPageLoading] = useState(true);
   const [detail, setDetail] = useState<any>(null);
 
   useEffect(() => {
     if (params.goods) {
       console.log('before: ', params.goods);
-      queryTest().then((res) => {
-        console.log('res: ', res);
-        setDetail(res);
-      });
+      queryGoodsDetail({ lang: locale, slug: params.goods })
+        .then((res) => {
+          console.log('res: ', res);
+          setDetail(res);
+        })
+        .catch(console.error)
+        .finally(() => {
+          setPageLoading(false);
+        });
     }
   }, [params]);
 
   return (
-    <ResponsiveGrid
-      className={styles.pageDetailWrap}
-      gap={20}
-    >
-      <ResponsiveGrid.Cell colSpan={24}>
-        {detail ? <BizGoodsDetail goodsInfo={detail} /> : null}
-      </ResponsiveGrid.Cell>
-      <ResponsiveGrid.Cell colSpan={24}>{params.goods}</ResponsiveGrid.Cell>
-    </ResponsiveGrid>
+    <div className={styles.pageDetailContainer}>
+      {pageLoading ? <Loading /> : null}
+      {!pageLoading && detail ? (
+        <BizGoodsDetail
+          //
+          goodsInfo={detail}
+          goodsSlug={params.goods || ''}
+        />
+      ) : null}
+    </div>
   );
 }
 

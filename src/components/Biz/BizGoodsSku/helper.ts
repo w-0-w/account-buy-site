@@ -1,11 +1,11 @@
 export const parseSkuData = (goodsInfo) => {
   const {
     //
-    skuCategoryName = '-',
+    skuCategoryName = '',
     skuMap,
   } = goodsInfo?.goodsDetail?.hasSkuTree || {};
 
-  const skuList = Object.keys(skuMap || {}) || ['-'];
+  const skuList = Object.keys(skuMap || {}) || [];
 
   return {
     skuCategoryName,
@@ -16,11 +16,11 @@ export const parseSkuData = (goodsInfo) => {
 export const getSubSkuData = (goodsInfo, sku) => {
   const {
     //
-    skuCategoryName: subSkuCategoryName = '-',
+    skuCategoryName: subSkuCategoryName = '',
     skuMap: subSkuMap,
   } = goodsInfo?.goodsDetail?.hasSkuTree?.skuMap?.[sku]?.subSku || {};
 
-  const subSkuList = Object.keys(subSkuMap || {}) || ['-'];
+  const subSkuList = Object.keys(subSkuMap || {}) || [];
   return {
     subSkuCategoryName,
     subSkuList,

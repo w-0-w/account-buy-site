@@ -13,7 +13,7 @@
   position: relative;
   width: 100%;
   height: var(--tiny-card-height);
-  background-color: #fff;
+  background-color: var(--g-main-bg-color);
   border-radius: var(--g-normal-round);
   /* aspect-ratio: 762 / 300; */
 }

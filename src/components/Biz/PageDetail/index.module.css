@@ -1,3 +1,4 @@
-.pageDetailWrap {
-  /*  */
+.pageDetailContainer {
+  min-height: 80vh;
+  background-color: var(--g-main-bg-color);
 }

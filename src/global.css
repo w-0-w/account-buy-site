@@ -3,6 +3,10 @@
 
 :root {
   --g-main-color: #000;
+  --g-main-red-color: #e60027;
+  --g-main-bg-color: #fff;
+  --g-text-white-color: #fff;
+  --g-text-black-color: #000;
   --g-main-lg-bg: linear-gradient(to right, #666, #000);
   /* --g-main-lg-bg: #000; */
   --g-normal-padding: 16px;
@@ -11,13 +15,63 @@
   --g-sm-bs-padding: 1px;
   --g-sm-box-shadow: 1px 1px var(--g-sm-bs-padding) #ddd;
   --g-page-padding: 22px;
+  /* - old ---------------------------------------------- */
+  /* border-radius */
+  /* 3px */
+  /* --form-element-medium-corner: 8px; */
+  /* - common ------------------------------------------- */
+  --common-major-color: #242424;
+  --common-page-bgc: #f9f6f6;
+  --common-padding: 16px;
+  --common-block-border-radius: 12px;
+  --common-block-box-shadow: 1px 1px 6px #eee;
+  --common-line-color: #eee;
+  --common-main-lg-bg: linear-gradient(to right, #666, #000);
+  /* flow page */
+  --flow-page-main-color: #888;
+  /* - tronlink ----------------------------------------- */
+  /* 按钮色 */
+  --tronlink-color: rgb(28, 33, 50);
+  /* 按钮加载色 */
+  --tronlink-loading-color: rgb(197 198 213);
+  /* 按钮加载动画 1 */
+  --tronlink-blue-color: rgb(33, 70, 161);
+  /* 按钮加载动画 2 */
+  --tronlink-white-color: rgb(255, 255, 255);
+  /* 圆角 */
+  --tronlink-borderradius: 12px;
+  /* - imToken ------------------------------------------ */
+  /* 按钮色 */
+  --imToken-color: rgb(11, 102, 255);
+  /* 按钮加载色 */
+  --imToken-loading-color: rgb(197 198 213);
+  /* 按钮加载动画 1 */
+  --imToken-blue-color: rgb(33, 70, 161);
+  /* 按钮加载动画 2 */
+  --imToken-white-color: rgb(255, 255, 255);
+  /* 圆角 */
+  --imToken-borderradius: 12px;
+  /* - tokenPocket -------------------------------------- */
+  /* 按钮色 */
+  --tokenPocket-color: rgb(29, 86, 211);
+  /* 按钮加载色 */
+  --tokenPocket-loading-color: rgb(197 198 213);
+  /* 按钮加载动画 1 */
+  --tokenPocket-blue-color: rgb(33, 70, 161);
+  /* 按钮加载动画 2 */
+  --tokenPocket-white-color: rgb(255, 255, 255);
+  /* 圆角 */
+  --tokenPocket-borderradius: 12px;
 }
 
-html, body, #ice-container {
+html,
+body,
+#ice-container {
   position: relative;
   width: 100%;
   max-width: 100%;
   height: 100%;
+  background-color: var(--g-main-bg-color);
 }
 
 body {
@@ -28,6 +82,21 @@ body::-webkit-scrollbar {
   display: none;
   scrollbar-width: none;
   scrollbar-color: transparent transparent;
+}
+
+.gl-cls-block {
+  position: relative;
+  display: flex;
+  width: calc(100% - var(--common-padding) * 2);
+  flex: none;
+  margin: var(--common-padding);
+  padding: var(--common-padding);
+  background-color: #fff;
+  border-radius: var(--common-block-border-radius);
+  box-shadow: var(--common-block-box-shadow);
+}
+.g-flow-page > .next-shell-header {
+  display: none !important;
 }
 
 .next-loading {

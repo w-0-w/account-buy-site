@@ -1,4 +1,4 @@
-import { Outlet, useLocale, getDefaultLocale } from 'ice';
+import { Outlet, useLocale, getDefaultLocale, useLocation } from 'ice';
 import { IntlProvider } from 'react-intl';
 import { Shell, ConfigProvider } from '@alifd/next';
 
@@ -11,6 +11,9 @@ import Footer from '@/components/Footer';
 export default function Layout() {
   const [locale] = useLocale();
   const defaultLocale = getDefaultLocale();
+  const customLocation = useLocation();
+
+  const isFlow = customLocation.pathname.startsWith('/flow');
 
   return (
     <IntlProvider
@@ -21,25 +24,24 @@ export default function Layout() {
     >
       <ConfigProvider device="phone">
         <Shell
+          className={isFlow ? 'g-flow-page' : ''}
           style={{
             minHeight: '100vh',
           }}
           type="dark"
           fixedHeader
         >
-          <Shell.Branding>
-            <BizLogo />
-          </Shell.Branding>
-          <Shell.Action>
-            <BizLangSwitch />
-          </Shell.Action>
+          <Shell.Branding>{isFlow ? null : <BizLogo />}</Shell.Branding>
+          <Shell.Action>{isFlow ? null : <BizLangSwitch />}</Shell.Action>
           <Shell.Content>
             <Outlet />
             <BizCS />
           </Shell.Content>
-          <Shell.Footer>
-            <Footer />
-          </Shell.Footer>
+          {isFlow ? null : (
+            <Shell.Footer>
+              <Footer />
+            </Shell.Footer>
+          )}
         </Shell>
       </ConfigProvider>
     </IntlProvider>

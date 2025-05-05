@@ -9,7 +9,7 @@
 }
 
 .bizLangSwitchInner {
-  color: #fff;
+  color: var(--g-text-white-color);
 }
 
 .bizLangSwitchSplit {

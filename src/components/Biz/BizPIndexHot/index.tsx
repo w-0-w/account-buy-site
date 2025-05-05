@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Data } from '@/data';
 import HomeHotBg from '@/assets/images/home-hot/bg.png';
+import { useBiz } from '@/hooks';
 
 import styles from './index.module.css';
 
@@ -12,12 +13,11 @@ export const BizPIndexHot = () => {
   const [locale] = useLocale();
   const navigate = useNavigate();
 
-  const [currencySymbol, setCurrencySymbol] = useState('');
+  const { currency, routePrefix } = useBiz();
   const [hotList, setHotList] = useState<null | any[]>(null);
 
   useEffect(() => {
     if (locale) {
-      setCurrencySymbol(locale === 'zh-CN' ? '¥' : '$');
       setHotList(Data?.[locale]?.hotTop?.goodsList || []);
     }
   }, [locale]);
@@ -54,7 +54,7 @@ export const BizPIndexHot = () => {
                   {/* 价格 */}
                   <div className={styles.bizPIndexHotGoodsItemPrice}>
                     <span className={styles.bizPIndexHotGoodsItemPriceSymbol}>
-                      {currencySymbol}
+                      {currency}
                     </span>{' '}
                     {goods?.price}
                   </div>
@@ -66,7 +66,7 @@ export const BizPIndexHot = () => {
                       className={styles.bizPIndexHotGoodsItemBuyBtn}
                       onClick={(evt) => {
                         evt.stopPropagation();
-                        navigate(`/detail/${goods?.shortEn}`);
+                        navigate(`${routePrefix}/detail/${goods?.shortEn}`);
                       }}
                     >
                       {/* 购买 */}

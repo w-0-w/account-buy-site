@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import { BizTinyCard } from '@/components/Biz/BizTinyCard';
 
 import { Data } from '@/data';
+import { useBiz } from '@/hooks';
 
 import styles from './index.module.css';
 
@@ -19,13 +20,12 @@ export const BizPIndexTabs = () => {
   const [locale] = useLocale();
   // const navigate = useNavigate();
 
-  const [currencySymbol, setCurrencySymbol] = useState('');
+  const { currency } = useBiz();
   const [tabList, setTabList] = useState<null | any[]>(null);
   const [tabItemData, setTabItemData] = useState<null | any[]>(null);
 
   useEffect(() => {
     if (locale) {
-      setCurrencySymbol(locale === 'zh-CN' ? '¥' : '$');
       setTabList(Data?.[locale]?.categories || []);
       setTabItemData(Data?.[locale]?.tabItem?.[`accountBuy_${INIT_IDX}`]);
     }
@@ -54,7 +54,7 @@ export const BizPIndexTabs = () => {
                   key={tidItem.goodsLibraryId}
                   idx={tidIdx}
                   info={tidItem}
-                  currencySymbol={currencySymbol}
+                  currencySymbol={currency}
                 />
               );
             })}

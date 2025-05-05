@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useIntl } from 'react-intl';
 import { Tag } from '@alifd/next';
 
 import { BizTitle } from '@/components/Biz/BizTitle';
@@ -18,6 +19,8 @@ export function BizGoodsSku({
   goodsInfo: any;
   onSkuChange: (props: TypeSkuChangeItem) => void;
 }) {
+  const intl = useIntl();
+
   // 初始化
   const { skuCategoryName, skuList } = parseSkuData(goodsInfo);
   const defSku = skuList[0];
@@ -48,15 +51,23 @@ export function BizGoodsSku({
 
   useEffect(() => {
     const firstSku = goodsInfo?.goodsDetail?.hasSkuTree?.skuMap?.[skuVal];
-    const secondSku = firstSku.subSku?.skuMap?.[subSkuVal];
-    const { alonePrice, originalPrice } = secondSku || {};
-    console.log('fff: ', secondSku);
-    onSkuChange({ alonePrice, originalPrice });
+    const secondSku = firstSku?.subSku?.skuMap?.[subSkuVal];
+
+    const { alonePrice, originalPrice } = secondSku || firstSku || {};
+    onSkuChange({
+      //
+      goodsImg: goodsInfo?.goodsDetail?.cols?.goodsIcon || '',
+      goodsName: goodsInfo?.goodsDetail?.product_name || '',
+      sku: skuVal || '',
+      subSku: subSkuVal || '',
+      alonePrice,
+      originalPrice,
+    });
   }, [skuVal, subSkuVal]);
 
   return (
     <div className={styles.bizGoodsSku}>
-      <BizTitle title="选择商品" />
+      <BizTitle title={intl.formatMessage({ id: 'biz-select-product' })} />
       <BizSubTitle title={skuCategoryName} />
       <TagGroup>
         {skuList.map((sku) => (
@@ -72,7 +83,7 @@ export function BizGoodsSku({
           </SelectableTag>
         ))}
       </TagGroup>
-      <BizSubTitle title={subSkuCateName} />
+      {subSkuCateName ? <BizSubTitle title={subSkuCateName} /> : null}
       <TagGroup>
         {subSkuArr.map((subSku) => (
           <SelectableTag

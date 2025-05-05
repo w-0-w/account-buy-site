@@ -1,20 +1,39 @@
+import { useNavigate } from 'ice';
 import { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
+
+import { useBiz } from '@/hooks';
 
 import { BizTitle } from '@/components/Biz/BizTitle';
 import { BizGoodsSku } from '@/components/Biz/BizGoodsSku';
+import { encodeOrder } from '@/utils';
 
-import GouwucheSvg from '@/assets/svg/gouwuche.svg';
+// import GouwucheSvg from '@/assets/svg/gouwuche.svg';
 
 import styles from './index.module.css';
 
 export function BizGoodsDetail({
   //
   goodsInfo,
-}: {
+}: // goodsSlug,
+{
   goodsInfo: any;
+  goodsSlug: string;
 }) {
-  const [prices, setPrices] = useState<null | TypeSkuChangeItem>(null);
+  const intl = useIntl();
+  const { routePrefix, currency } = useBiz();
+  const navigate = useNavigate();
+
+  const [skus, setSkus] = useState<null | TypeSkuChangeItem>(null);
+
+  const onBuyEvt = () => {
+    if (skus === null) {
+      alert('Error-0');
+    } else {
+      navigate(`${routePrefix}/order?_=${encodeOrder(skus)}`);
+    }
+  };
+
   return (
     <div className={styles.bizGoodsDetail}>
       <div className={styles.bizGoodsDetailTop}>
@@ -25,9 +44,20 @@ export function BizGoodsDetail({
           />
         </div>
         <div className={styles.bizGoodsDetailTopRight}>
-          <div>{goodsInfo?.goodsDetail?.product_name || '-'}</div>
-          <div>
-            {prices?.alonePrice} - {prices?.originalPrice}
+          <div className={styles.bizGoodsDetailTopRightName}>
+            {goodsInfo?.goodsDetail?.product_name || '-'}
+          </div>
+          <div className={styles.bizGoodsDetailTopRightPrice}>
+            <div className={styles.bizGoodsDetailTopRightPriceCurrency}>
+              {currency}
+            </div>
+            <div className={styles.bizGoodsDetailTopRightPriceReal}>
+              {skus?.alonePrice}
+            </div>
+            <div className={styles.bizGoodsDetailTopRightPriceOriginal}>
+              {currency}
+              {skus?.originalPrice}
+            </div>
           </div>
         </div>
       </div>
@@ -35,13 +65,15 @@ export function BizGoodsDetail({
         <BizGoodsSku
           goodsInfo={goodsInfo}
           onSkuChange={(changeItem) => {
-            setPrices(changeItem);
+            setSkus(changeItem);
           }}
         />
       </div>
       <div className={styles.bizGoodsDesc}>
         <BizTitle
-          title={`${goodsInfo?.goodsDetail?.gameLibraryName || '-'}详情`}
+          title={`${
+            goodsInfo?.goodsDetail?.gameLibraryName || '-'
+          } ${intl.formatMessage({ id: 'biz-product-details' })}`}
         />
         {/* <div className={styles.bizGoodsDescTitle}></div> */}
         <div
@@ -59,10 +91,16 @@ export function BizGoodsDetail({
             alt=""
           />
         </div> */}
-        <div className={styles.bizFixedBottomBtn}>
+        <div
+          className={styles.bizFixedBottomBtn}
+          onClick={(evt) => {
+            evt.stopPropagation();
+            onBuyEvt();
+          }}
+        >
           <FormattedMessage
             id="biz-buy-now"
-            values={{ price: prices?.alonePrice }}
+            values={{ price: skus?.alonePrice }}
           />
         </div>
       </div>

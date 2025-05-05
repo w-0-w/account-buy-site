@@ -16,4 +16,65 @@ type TypeTabItem = {
   path: string;
 };
 
-type TypeSkuChangeItem = { alonePrice: number; originalPrice: number };
+type TypeSkuChangeItem = {
+  goodsImg: string;
+  goodsName: string;
+  sku: string;
+  subSku: string;
+  alonePrice: number;
+  originalPrice: number;
+};
+
+/* - old ---------------------------- */
+interface Window {
+  tron: any;
+  tronLink: any;
+  tronWeb: any;
+  imToken: any;
+  okxwallet: any;
+}
+
+type TypePlatform =
+  | 'bitpie'
+  | 'coinbase'
+  | 'imToken'
+  | 'metaMask'
+  | 'okex'
+  | 'tokenPocket'
+  | 'tronlink';
+
+type TypeXListItem = 'TRC20' | 'ERC20' | 'BEP20';
+
+type TypePayWay = {
+  key: TypePlatform;
+  name: string;
+  icon: string;
+  xList: TypeXListItem[];
+  desc: string;
+  fn?: (p: { item: TypePayWay; index: number }) => void;
+};
+
+type TypeWallet =
+  | ''
+  | 'okxwallet'
+  | 'imToken'
+  | 'tokenPocket'
+  | 'bitKeep'
+  | 'tronLink'
+  | 'bitpie';
+
+type TypeChain = '' | 'eth' | 'bsc' | 'tron' | 'okxc';
+
+type TypeFlowInfoItem = {
+  wallet: TypeWallet;
+  chain: TypeChain;
+  uca: {
+    test: string;
+    main: string;
+  };
+  trxLimit: {
+    value: number;
+    readable: string;
+  };
+  amount: string;
+};

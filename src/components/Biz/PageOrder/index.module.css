@@ -1,0 +1,150 @@
+.pageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.pagePayWays {
+  margin-bottom: calc(var(--common-padding) * 1.5);
+}
+
+.payWayList {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--common-padding);
+}
+
+.payWayItem {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: var(--common-padding);
+}
+
+.payWayItemDivider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--common-line-color);
+}
+
+.payWayIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  box-shadow: var(--common-block-box-shadow);
+}
+
+.payWayItemRight {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--common-padding) / 2);
+}
+
+.payWayItemRightText {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.payWayItemRightDesc {
+  font-size: 14px;
+  line-height: 22px;
+  color: #999;
+}
+
+/*  */
+.pageOrderInfos {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.pageOrderInfosLeft {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 70px;
+  height: 70px;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pageOrderInfosLeftImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pageOrderInfosRight {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pageOrderInfosRightGoodsName {
+  color: var(--g-text-black-color);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.pageOrderInfosRightGoodsSku {
+  color: #999;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.pageOrderInfosRightGoodsPrices {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 4px;
+}
+
+.pageOrderInfosRightGoodsPricesUSDT {
+  color: var(--g-text-black-color);
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.pageOrderInfosRightGoodsPricesSp {
+  margin: 0 12px;
+  color: var(--g-text-black-color);
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.pageOrderInfosRightGoodsPricesCurrency {
+  color: var(--g-text-black-color);
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: bold;
+}
+.pageOrderInfosRightGoodsPricesReal {
+  color: var(--g-text-black-color);
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+}
+.pageOrderInfosRightGoodsPricesOriginal {
+  margin-left: 8px;
+  color: #999;
+  font-size: 12px;
+  line-height: 12px;
+  text-decoration: line-through;
+}
+
+.pageOrderDesc {
+  margin: 0 auto;
+}
+
+.pageOrderDescTxt {
+  font-size: 12px;
+  line-height: 18px;
+  color: red;
+}
