@@ -1,8 +1,9 @@
 import { useSearchParams } from 'ice';
 import { useState, useEffect, Fragment } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { useBiz } from '@/hooks';
-import { base64URLDecode, parseParamMapFromUrl, decodeOrder } from '@/utils';
+import { decodeOrder } from '@/utils';
 
 import { PayWayList4Render } from './config';
 
@@ -72,7 +73,7 @@ export function PageOrder() {
       </div>
       <div className={`${styles.pageOrderDesc} gl-cls-block`}>
         <div className={styles.pageOrderDescTxt}>
-          由于第三方充值风控限制，目前只能USDT充值，请针对相应钱包进行转账充值，充值成功自动到账。
+          <FormattedMessage id="biz-order-middle-desc" />
         </div>
       </div>
       <div className={`${styles.pagePayWays} gl-cls-block`}>

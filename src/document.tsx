@@ -8,9 +8,12 @@ import {
 
 import { Conf } from '@/config/page';
 
-export default function Document({ pagePath }) {
-  const pp = `/${pagePath.split('/')?.[1] || ''}`;
-  // console.log('pp:: ', pp);
+export default function Document({ pagePath }: { pagePath: string }) {
+  const EnPre = '/en-US';
+  const realPagePath = pagePath.startsWith(EnPre)
+    ? pagePath.substring(EnPre.length)
+    : pagePath;
+  const pp = `/${realPagePath.split('/')?.[1] || ''}`;
   const { title = '-', pageMeta } = Conf[pp] || {};
   return (
     <html>

@@ -6,6 +6,14 @@ type TypeDataCategoriesItem = {
   path: string;
 };
 
+type TypeHotTopItem = {
+  id: number;
+  goodsIcon: string;
+  goodsCategoryName: string;
+  price: number;
+  shortEn: string;
+};
+
 type TypeTabItem = {
   name: string;
   image: string;

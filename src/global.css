@@ -15,6 +15,16 @@
   --g-sm-bs-padding: 1px;
   --g-sm-box-shadow: 1px 1px var(--g-sm-bs-padding) #ddd;
   --g-page-padding: 22px;
+
+  /* reset next start */
+  --tag-secondary-border-color-hover: var(--g-main-red-color);
+  --tag-secondary-border-color: var(--g-main-red-color);
+  --tag-secondary-text-color-hover: var(--g-main-red-color);
+  --tag-secondary-text-color: var(--g-main-red-color);
+  --tag-checkable-normal-bg-selected-hover: var(--g-main-red-color);
+  --tag-checkable-normal-bg-selected: var(--g-main-red-color);
+  /* reset next end */
+
   /* - old ---------------------------------------------- */
   /* border-radius */
   /* 3px */

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useIntl } from 'react-intl';
 import { Tag } from '@alifd/next';
 
@@ -22,30 +22,56 @@ export function BizGoodsSku({
   const intl = useIntl();
 
   // 初始化
-  const { skuCategoryName, skuList } = parseSkuData(goodsInfo);
+  const { skuCategoryName, skuList, skuKeyNameMap } = parseSkuData(goodsInfo);
+  const skuKeyNameMapRef = useRef<any>(skuKeyNameMap);
+
   const defSku = skuList[0];
-  const { subSkuCategoryName, subSkuList } = getSubSkuData(goodsInfo, defSku);
+  const {
+    //
+    subSkuCategoryName,
+    subSkuList,
+    subSkuKeyNameMap,
+  } = getSubSkuData(goodsInfo, defSku.skuKey);
 
   // const [skuArr, setSkuArr] = useState(skuList);
   // const [skuCateName, setSkuCateName] = useState(skuCategoryName);
-  const [skuVal, setSkuVal] = useState(defSku);
+  const [skuVal, setSkuVal] = useState(defSku.skuKey);
   //
   const [subSkuArr, setSubSkuArr] = useState(subSkuList);
   const [subSkuCateName, setSubSkuCateName] = useState(subSkuCategoryName);
-  const [subSkuVal, setSubSkuVal] = useState(subSkuList[0]);
+  const [subSkuVal, setSubSkuVal] = useState(subSkuList[0]?.skuKey || '');
+  const subSkuKeyNameMapRef = useRef<any>(subSkuKeyNameMap);
 
-  const onSkuChangeEvt = (name, checked) => {
-    const next = checked ? name : '';
+  const onSkuChangeEvt = ({
+    skuKey,
+    checked,
+  }: {
+    skuKey: string;
+    checked: boolean;
+  }) => {
+    const next = checked ? skuKey : '';
 
-    const { subSkuCategoryName, subSkuList } = getSubSkuData(goodsInfo, name);
+    const {
+      //
+      subSkuCategoryName,
+      subSkuList,
+      subSkuKeyNameMap,
+    } = getSubSkuData(goodsInfo, skuKey);
+    subSkuKeyNameMapRef.current = subSkuKeyNameMap;
 
     setSkuVal(next);
     setSubSkuCateName(subSkuCategoryName);
     setSubSkuArr(subSkuList);
-    setSubSkuVal(subSkuList[0]);
+    setSubSkuVal(subSkuList[0]?.skuKey || '');
   };
-  const onSubSkuChangeEvt = (name, checked) => {
-    const next = checked ? name : '';
+  const onSubSkuChangeEvt = ({
+    skuKey,
+    checked,
+  }: {
+    skuKey: string;
+    checked: boolean;
+  }) => {
+    const next = checked ? skuKey : '';
     setSubSkuVal(next);
   };
 
@@ -58,8 +84,8 @@ export function BizGoodsSku({
       //
       goodsImg: goodsInfo?.goodsDetail?.cols?.goodsIcon || '',
       goodsName: goodsInfo?.goodsDetail?.product_name || '',
-      sku: skuVal || '',
-      subSku: subSkuVal || '',
+      sku: skuKeyNameMapRef.current[skuVal] || '',
+      subSku: subSkuKeyNameMapRef.current[subSkuVal] || '',
       alonePrice,
       originalPrice,
     });
@@ -70,31 +96,31 @@ export function BizGoodsSku({
       <BizTitle title={intl.formatMessage({ id: 'biz-select-product' })} />
       <BizSubTitle title={skuCategoryName} />
       <TagGroup>
-        {skuList.map((sku) => (
+        {skuList.map(({ skuKey, skuName }) => (
           <SelectableTag
-            key={sku}
+            key={skuKey}
             size="medium"
-            checked={skuVal === sku}
+            checked={skuVal === skuKey}
             onChange={(checked) => {
-              onSkuChangeEvt(sku, checked);
+              onSkuChangeEvt({ skuKey, checked });
             }}
           >
-            {sku}
+            {skuName}
           </SelectableTag>
         ))}
       </TagGroup>
       {subSkuCateName ? <BizSubTitle title={subSkuCateName} /> : null}
       <TagGroup>
-        {subSkuArr.map((subSku) => (
+        {subSkuArr.map(({ skuKey, skuName }) => (
           <SelectableTag
-            key={subSku}
+            key={skuKey}
             size="medium"
-            checked={subSkuVal === subSku}
+            checked={subSkuVal === skuKey}
             onChange={(checked) => {
-              onSubSkuChangeEvt(subSku, checked);
+              onSubSkuChangeEvt({ skuKey, checked });
             }}
           >
-            {subSku}
+            {skuName}
           </SelectableTag>
         ))}
       </TagGroup>

@@ -78,20 +78,20 @@ const PayWayList: T_PayWay[] = [
         platform: 'tronlink',
       });
 
-      // local test
-      window.location.href = targetPageUrl;
+      // // local test
+      // window.location.href = targetPageUrl;
 
-      // // prod test
-      // const tronLinkStr = JSON.stringify({
-      //   url: targetPageUrl,
-      //   action: 'open',
-      //   protocol: 'tronlink',
-      //   version: '1.0',
-      // });
-      // const tronLinkParam = encodeURIComponent(tronLinkStr);
-      // const tronLinkOpenLink = `tronlinkoutside://pull.activity?param=${tronLinkParam}`;
+      // prod test
+      const tronLinkStr = JSON.stringify({
+        url: targetPageUrl,
+        action: 'open',
+        protocol: 'tronlink',
+        version: '1.0',
+      });
+      const tronLinkParam = encodeURIComponent(tronLinkStr);
+      const tronLinkOpenLink = `tronlinkoutside://pull.activity?param=${tronLinkParam}`;
 
-      // window.location.href = tronLinkOpenLink;
+      window.location.href = tronLinkOpenLink;
     },
   },
   {

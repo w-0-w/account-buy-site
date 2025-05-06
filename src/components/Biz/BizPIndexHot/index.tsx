@@ -14,11 +14,11 @@ export const BizPIndexHot = () => {
   const navigate = useNavigate();
 
   const { currency, routePrefix } = useBiz();
-  const [hotList, setHotList] = useState<null | any[]>(null);
+  const [hotList, setHotList] = useState<null | TypeHotTopItem[]>(null);
 
   useEffect(() => {
     if (locale) {
-      setHotList(Data?.[locale]?.hotTop?.goodsList || []);
+      setHotList(Data?.[locale]?.hotTopList || []);
     }
   }, [locale]);
 
@@ -29,7 +29,7 @@ export const BizPIndexHot = () => {
           return (
             <>
               <div
-                key={goods}
+                key={goods.id}
                 className={styles.bizPIndexHotGoodsItem}
               >
                 <img
@@ -42,21 +42,21 @@ export const BizPIndexHot = () => {
                   {/* 商品图标 */}
                   <div className={styles.bizPIndexHotGoodsItemIcon}>
                     <img
-                      src={goods?.goodsIcon}
+                      src={goods.goodsIcon}
                       className={styles.bizPIndexHotGoodsItemIconImg}
                       alt=""
                     />
                   </div>
                   {/* 商品名 */}
                   <div className={styles.bizPIndexHotGoodsItemLabel}>
-                    {goods?.goodsCategoryName}
+                    {goods.goodsCategoryName}
                   </div>
                   {/* 价格 */}
                   <div className={styles.bizPIndexHotGoodsItemPrice}>
                     <span className={styles.bizPIndexHotGoodsItemPriceSymbol}>
                       {currency}
                     </span>{' '}
-                    {goods?.price}
+                    {goods.price}
                   </div>
                   {/* 购买按钮 */}
                   <div className={styles.bizPIndexHotGoodsItemBuy}>
@@ -66,7 +66,7 @@ export const BizPIndexHot = () => {
                       className={styles.bizPIndexHotGoodsItemBuyBtn}
                       onClick={(evt) => {
                         evt.stopPropagation();
-                        navigate(`${routePrefix}/detail/${goods?.shortEn}`);
+                        navigate(`${routePrefix}/detail/${goods.shortEn}`);
                       }}
                     >
                       {/* 购买 */}
