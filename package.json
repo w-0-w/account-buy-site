@@ -6,6 +6,7 @@
     "start": "ice start --speedup",
     "build": "ice build",
     "server": "serve -l 3456 build --no-request-logging",
+    "server:pure": "serve -l 3456 build",
     "node:server": "node serve.js",
     "deploy": "git pull && npm i && npm run build && npm run node:server",
     "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
