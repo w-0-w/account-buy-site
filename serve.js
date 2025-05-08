@@ -10,7 +10,7 @@ const server = http.createServer((request, response) => {
     // 资源根目录
     public: './build',
     // 目录不能枚举
-    directoryListing: false,
+    // directoryListing: false,
     // 页面静态处理
     rewrites: [
       { source: 'detail/**', destination: '/index.html' },
