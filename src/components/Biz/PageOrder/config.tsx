@@ -28,7 +28,7 @@ type T_PayWay = {
   fn: (p: {
     item: T_PayWay;
     index: number;
-    pageParamMap: TypeSkuChangeItem;
+    pageParamMap: TypeOrderSkuInfo;
   }) => void;
 };
 

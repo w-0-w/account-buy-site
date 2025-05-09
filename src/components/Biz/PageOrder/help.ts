@@ -7,13 +7,13 @@ export const buildFlowPageUrl = ({
   platform,
 }: {
   pageOrderHref: string;
-  pageParamMap: TypeSkuChangeItem;
+  pageParamMap: TypeOrderSkuInfo;
   platform: string;
 }) => {
   const fullPathUrl = `${pageOrderHref.split('/order?')?.[0] || ''}/flow`;
   const str = encodeOrder({
     // ...pageParamMap,
-    alonePrice: pageParamMap.alonePrice,
+    alonePrice: pageParamMap.uPrice,
     platform,
   });
 

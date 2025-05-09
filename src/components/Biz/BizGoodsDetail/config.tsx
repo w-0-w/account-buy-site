@@ -19,3 +19,16 @@ export const BizGoodsCommonLabelList = [
     icon: SvgOnline,
   },
 ];
+
+export const getUPrice = ({
+  //
+  changeItem,
+  currency,
+}: {
+  changeItem: TypeSkuChangeItem;
+  currency: TypeCurrency;
+}) => {
+  return currency === '¥'
+    ? Math.floor((changeItem.alonePrice * 100) / 7.2) / 100
+    : changeItem.alonePrice;
+};

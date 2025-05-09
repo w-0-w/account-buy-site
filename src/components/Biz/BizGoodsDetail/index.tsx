@@ -8,8 +8,7 @@ import { BizTitle } from '@/components/Biz/BizTitle';
 import { BizGoodsSku } from '@/components/Biz/BizGoodsSku';
 import { encodeOrder } from '@/utils';
 
-// import GouwucheSvg from '@/assets/svg/gouwuche.svg';
-import { BizGoodsCommonLabelList } from './config';
+import { BizGoodsCommonLabelList, getUPrice } from './config';
 
 import styles from './index.module.css';
 
@@ -25,7 +24,7 @@ export function BizGoodsDetail({
   const { routePrefix, currency } = useBiz();
   const navigate = useNavigate();
 
-  const [skus, setSkus] = useState<null | TypeSkuChangeItem>(null);
+  const [skus, setSkus] = useState<null | TypeOrderSkuInfo>(null);
 
   const onBuyEvt = () => {
     if (skus === null) {
@@ -87,7 +86,10 @@ export function BizGoodsDetail({
         <BizGoodsSku
           goodsInfo={goodsInfo}
           onSkuChange={(changeItem) => {
-            setSkus(changeItem);
+            setSkus({
+              ...changeItem,
+              uPrice: getUPrice({ changeItem, currency }),
+            });
           }}
         />
       </div>

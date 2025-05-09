@@ -2,7 +2,7 @@ import { useLocale } from 'ice';
 
 import { ZH, EN } from '@/config/i18n';
 
-export function useBiz() {
+export function useBiz(): TypeBizHookReturns {
   const [locale] = useLocale();
 
   return {

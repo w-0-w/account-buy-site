@@ -1,5 +1,14 @@
 /// <reference types="@ice/app/types" />
 
+type TypeCurrency = '¥' | '$';
+
+type TypeBizHookReturns = {
+  lang: string;
+  routePrefix: string;
+  currency: TypeCurrency;
+  comma: string;
+};
+
 type TypeDataCategoriesItem = {
   id: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   name: string;
@@ -31,6 +40,10 @@ type TypeSkuChangeItem = {
   subSku: string;
   alonePrice: number;
   originalPrice: number;
+};
+
+type TypeOrderSkuInfo = TypeSkuChangeItem & {
+  uPrice: number;
 };
 
 /* - old ---------------------------- */

@@ -19,7 +19,7 @@ export function PageOrder() {
     //
     pageParamMap,
     setPageParamMap,
-  ] = useState<null | TypeSkuChangeItem>(null);
+  ] = useState<null | TypeOrderSkuInfo>(null);
   const [
     //
     emailInputState,
@@ -77,7 +77,7 @@ export function PageOrder() {
               </div>
               <div className={styles.pageOrderInfosRightGoodsPrices}>
                 <span className={styles.pageOrderInfosRightGoodsPricesUSDT}>
-                  {(pageParamMap.alonePrice / 7.2).toFixed(2)} USDT
+                  {pageParamMap.uPrice} USDT
                 </span>
                 <span className={styles.pageOrderInfosRightGoodsPricesSp}>
                   /
