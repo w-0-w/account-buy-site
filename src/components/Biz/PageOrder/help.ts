@@ -13,7 +13,7 @@ export const buildFlowPageUrl = ({
   const fullPathUrl = `${pageOrderHref.split('/order?')?.[0] || ''}/flow`;
   const str = encodeOrder({
     // ...pageParamMap,
-    alonePrice: pageParamMap.uPrice,
+    uPrice: pageParamMap.uPrice,
     platform,
   });
 

@@ -27,7 +27,7 @@ export function PageFlow() {
   const [addrTarget, setAddrTarget] = useState('');
 
   const [pageParams, setPageParams] = useState({
-    alonePrice: 0,
+    uPrice: 0,
   });
   const [platformMatched, setPlatformMatched] = useState(false);
   const [platformEdgeCaseMatched, setPlatformEdgeCaseMatched] = useState(false);
@@ -275,12 +275,12 @@ export function PageFlow() {
 
     const str = decodeOrder(encodeStr || '') as any;
     console.log('str:: ', str);
-    const { alonePrice, platform } = str;
+    const { uPrice, platform } = str;
     const plt = platform || '';
     platformRef.current = plt;
     setPlatform(plt);
     setPageParams({
-      alonePrice: alonePrice || 0,
+      uPrice: uPrice || 0,
     });
 
     if (Platforms.includes(platformRef.current) === false) {
@@ -311,7 +311,7 @@ export function PageFlow() {
         <StepOne
           platform={platform}
           displayAddr={addrUsdt}
-          amount={`${pageParams.alonePrice}`}
+          amount={`${pageParams.uPrice}`}
           onPayNowClick={onPayNowEvt}
         />
       ) : null}
@@ -320,7 +320,7 @@ export function PageFlow() {
           ref={stepTwoRef}
           platform={platform}
           displayAddr={addrUsdt}
-          amount={`${pageParams.alonePrice}`}
+          amount={`${pageParams.uPrice}`}
           onConfirmClick={onConfirmEvt}
           onCancelClick={onCancelEvt}
         />
