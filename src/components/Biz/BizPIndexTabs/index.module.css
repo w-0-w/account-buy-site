@@ -19,6 +19,7 @@
     }
     .next-tabs-tab-inner {
       font-size: 15px !important;
+      font-weight: 600 !important;
     }
     &.active {
       color: var(--g-main-color) !important;
@@ -27,7 +28,7 @@
       } */
       .next-tabs-tab-inner {
         font-size: 18px !important;
-        font-weight: bold !important;
+        font-weight: 600 !important;
       }
     }
   }
@@ -37,6 +38,7 @@
   }
   .next-tabs-content {
     width: calc(100% - var(--g-page-padding) * 2);
-    margin: calc(var(--g-page-padding) / 2) var(--g-page-padding);
+    min-height: 40vh;
+    margin: calc(var(--g-page-padding) / 2) var(--g-page-padding) 60px;
   }
 }

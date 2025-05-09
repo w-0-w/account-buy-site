@@ -14,10 +14,10 @@
 }
 
 .bizGoodsDetailTopLeft {
+  flex: none;
   position: relative;
   width: 88px;
   height: 118px;
-  /* background-color: aqua; */
   & > img {
     position: relative;
     width: 100%;
@@ -35,7 +35,7 @@
 .bizGoodsDetailTopRightName {
   color: var(--g-text-black-color);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 28px;
 }
 
@@ -48,12 +48,12 @@
 
 .bizGoodsDetailTopRightPriceCurrency {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 14px;
 }
 .bizGoodsDetailTopRightPriceReal {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 18px;
 }
 .bizGoodsDetailTopRightPriceOriginal {
@@ -62,6 +62,37 @@
   line-height: 14px;
   color: #999;
   text-decoration: line-through;
+}
+
+.bizGoodsCommonLabelWrap {
+  margin-top: 4px;
+}
+
+.bizGoodsCommonLabelItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+
+.bizGoodsCommonLabelIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.bizGoodsCommonLabelIconImg {
+  width: 14px;
+  height: 14px;
+}
+
+.bizGoodsCommonLabelText {
+  color: var(--g-text-dark_gray-color);
+  font-size: 13px;
+  line-height: 18px;
 }
 
 .bizGoodsDetailSku {
@@ -95,7 +126,8 @@
   bottom: 0;
   padding: 0 12px;
   background-color: var(--g-main-bg-color);
-  box-shadow: 0px -2px 8px #ddd;
+  /* box-shadow: 0px -2px 8px #ddd; */
+  z-index: 99;
 }
 
 .bizFixedBottomSvg {
@@ -114,5 +146,5 @@
   color: var(--g-text-white-color);
   font-size: 14px;
   line-height: 36px;
-  /* font-weight: bold; */
+  /* font-weight: 500; */
 }

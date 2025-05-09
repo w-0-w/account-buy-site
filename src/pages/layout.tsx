@@ -3,6 +3,7 @@ import { IntlProvider } from 'react-intl';
 import { Shell, ConfigProvider } from '@alifd/next';
 
 import { i18n } from '@/i8n';
+import { useBiz } from '@/hooks';
 import { BizLogo } from '@/components/Biz/BizLogo';
 import { BizLangSwitch } from '@/components/Biz/BizLangSwitch';
 import { BizCS } from '@/components/Biz/BizCS';
@@ -13,7 +14,13 @@ export default function Layout() {
   const defaultLocale = getDefaultLocale();
   const customLocation = useLocation();
 
-  const isFlow = customLocation.pathname.startsWith('/flow');
+  const { routePrefix } = useBiz();
+
+  const isFlow = customLocation.pathname.startsWith(`${routePrefix}/flow`);
+  const isNotes = customLocation.pathname.startsWith(`${routePrefix}/notes`);
+
+  const hideHeader = isFlow || isNotes;
+  const hideFooter = isFlow || isNotes;
 
   return (
     <IntlProvider
@@ -24,20 +31,20 @@ export default function Layout() {
     >
       <ConfigProvider device="phone">
         <Shell
-          className={isFlow ? 'g-flow-page' : ''}
+          className={hideHeader ? 'g-hide-header-page' : ''}
           style={{
             minHeight: '100vh',
           }}
           type="dark"
           fixedHeader
         >
-          <Shell.Branding>{isFlow ? null : <BizLogo />}</Shell.Branding>
-          <Shell.Action>{isFlow ? null : <BizLangSwitch />}</Shell.Action>
+          <Shell.Branding>{hideHeader ? null : <BizLogo />}</Shell.Branding>
+          <Shell.Action>{hideHeader ? null : <BizLangSwitch />}</Shell.Action>
           <Shell.Content>
             <Outlet />
             <BizCS />
           </Shell.Content>
-          {isFlow ? null : (
+          {hideFooter ? null : (
             <Shell.Footer>
               <Footer />
             </Shell.Footer>

@@ -9,6 +9,7 @@ import { BizGoodsSku } from '@/components/Biz/BizGoodsSku';
 import { encodeOrder } from '@/utils';
 
 // import GouwucheSvg from '@/assets/svg/gouwuche.svg';
+import { BizGoodsCommonLabelList } from './config';
 
 import styles from './index.module.css';
 
@@ -58,6 +59,27 @@ export function BizGoodsDetail({
               {currency}
               {skus?.originalPrice}
             </div>
+          </div>
+          <div className={styles.bizGoodsCommonLabelWrap}>
+            {BizGoodsCommonLabelList.map(({ key, icon, i18nKey }) => {
+              return (
+                <div
+                  key={key}
+                  className={styles.bizGoodsCommonLabelItem}
+                >
+                  <div className={styles.bizGoodsCommonLabelIcon}>
+                    <img
+                      src={icon}
+                      className={styles.bizGoodsCommonLabelIconImg}
+                      alt="cs"
+                    />
+                  </div>
+                  <div className={styles.bizGoodsCommonLabelText}>
+                    <FormattedMessage id={i18nKey} />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

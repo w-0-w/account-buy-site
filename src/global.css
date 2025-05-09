@@ -7,22 +7,31 @@
   --g-main-bg-color: #fff;
   --g-text-white-color: #fff;
   --g-text-black-color: #000;
-  --g-main-lg-bg: linear-gradient(to right, #666, #000);
+  --g-text-gray-color: #999;
+  --g-text-dark_gray-color: #777;
+  /* --g-main-lg-bg: linear-gradient(to right, #666, #000); */
+  --g-main-lg-bg: linear-gradient(
+    134deg,
+    rgb(79, 84, 93) 0%,
+    rgb(19, 19, 33) 100%
+  );
   /* --g-main-lg-bg: #000; */
   --g-normal-padding: 16px;
   --g-normal-round: 8px;
   --g-normal-border: 1px solid #eee;
-  --g-sm-bs-padding: 1px;
+  --g-sm-bs-padding: 3px;
   --g-sm-box-shadow: 1px 1px var(--g-sm-bs-padding) #ddd;
   --g-page-padding: 22px;
 
   /* reset next start */
+  --shell-dark-header-background: #000000;
   --tag-secondary-border-color-hover: var(--g-main-red-color);
   --tag-secondary-border-color: var(--g-main-red-color);
   --tag-secondary-text-color-hover: var(--g-main-red-color);
   --tag-secondary-text-color: var(--g-main-red-color);
   --tag-checkable-normal-bg-selected-hover: var(--g-main-red-color);
   --tag-checkable-normal-bg-selected: var(--g-main-red-color);
+  --input-focus-border-color: var(--g-main-red-color);
   /* reset next end */
 
   /* - old ---------------------------------------------- */
@@ -85,6 +94,7 @@ body,
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -105,7 +115,7 @@ body::-webkit-scrollbar {
   border-radius: var(--common-block-border-radius);
   box-shadow: var(--common-block-box-shadow);
 }
-.g-flow-page > .next-shell-header {
+.g-hide-header-page > .next-shell-header {
   display: none !important;
 }
 
@@ -123,4 +133,8 @@ body::-webkit-scrollbar {
 }
 .next-tag.next-tag-checkable {
   /*  */
+}
+
+.next-input.next-focus {
+  box-shadow: 0 0 0 2px rgba(230, 0, 39, 0.2) !important;
 }

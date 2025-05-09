@@ -1,14 +1,32 @@
 .footer {
-  line-height: 20px;
-  text-align: center;
-  padding-bottom: 80px;
+  position: relative;
+  width: 100vw;
+  padding: 60px 15px 160px;
+  background-color: #000;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 16px;
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  width: 80vw;
+  margin: 0 auto 60px;
 }
 
-.copyright {
-  font-size: 12px;
+.footerLinkItem {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.footerLogoImgWrap {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.footerLogoImg {
+  width: 30vw;
+  aspect-ratio: 762 / 300;
 }

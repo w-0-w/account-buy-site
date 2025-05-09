@@ -89,4 +89,8 @@ export const Conf = {
     title: '立即支付',
     pageMeta,
   },
+  '/notes': {
+    title: '信息说明',
+    pageMeta,
+  },
 };

@@ -9,6 +9,7 @@
   height: 50px;
   background: var(--g-main-lg-bg);
   border-radius: 50%;
+  opacity: .8;
   z-index: 1000;
 }
 

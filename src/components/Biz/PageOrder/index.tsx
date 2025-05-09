@@ -1,9 +1,11 @@
 import { useSearchParams } from 'ice';
 import { useState, useEffect, Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Input, Message } from '@alifd/next';
 
 import { useBiz } from '@/hooks';
-import { decodeOrder } from '@/utils';
+import { BizTitle } from '@/components/Biz/BizTitle';
+import { isValidEmail, decodeOrder } from '@/utils';
 
 import { PayWayList4Render } from './config';
 
@@ -18,6 +20,12 @@ export function PageOrder() {
     pageParamMap,
     setPageParamMap,
   ] = useState<null | TypeSkuChangeItem>(null);
+  const [
+    //
+    emailInputState,
+    setEmailInputState,
+  ] = useState<undefined | 'error'>(undefined);
+  const [emailVal, setEmailVal] = useState('');
 
   useEffect(() => {
     const encodeStr = searchParams.get('_');
@@ -29,6 +37,24 @@ export function PageOrder() {
 
   return (
     <div className={styles.pageContainer}>
+      <div className={`${styles.pageOrderEmail} gl-cls-block`}>
+        <BizTitle title="收货信息" />
+        <Input
+          size="medium"
+          placeholder="请输入您的邮箱"
+          style={{
+            width: '100%',
+          }}
+          state={emailInputState}
+          onFocus={() => {
+            setEmailInputState(undefined);
+          }}
+          onChange={(value) => {
+            setEmailVal(`${value}`.trim());
+          }}
+          aria-label="Large"
+        />
+      </div>
       <div className={`${styles.pageOrderInfos} gl-cls-block`}>
         {pageParamMap ? (
           <>
@@ -85,11 +111,21 @@ export function PageOrder() {
                   className={styles.payWayItem}
                   onClick={(evt) => {
                     evt.stopPropagation();
-                    pw.fn({
-                      item: pw.oriItem,
-                      index: pwIdx,
-                      pageParamMap: pageParamMap as any,
-                    });
+                    if (isValidEmail(emailVal)) {
+                      setEmailInputState(undefined);
+                      pw.fn({
+                        item: pw.oriItem,
+                        index: pwIdx,
+                        pageParamMap: pageParamMap as any,
+                      });
+                    } else {
+                      setEmailInputState('error');
+                      Message.show({
+                        type: 'error',
+                        align: 'cc cc',
+                        content: '请输入正确的邮箱地址！',
+                      });
+                    }
                   }}
                 >
                   <img

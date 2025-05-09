@@ -86,3 +86,11 @@ type TypeFlowInfoItem = {
   };
   amount: string;
 };
+
+type TypePageNoteEnum =
+  | 'security'
+  | 'payment'
+  | 'freight'
+  | 'returns'
+  | 'privacy-policy'
+  | 'help';

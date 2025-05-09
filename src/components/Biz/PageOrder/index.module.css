@@ -56,6 +56,13 @@
 }
 
 /*  */
+.pageOrderEmail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding-top: 5px;
+}
+
 .pageOrderInfos {
   display: flex;
   flex-direction: row;
@@ -88,7 +95,7 @@
 .pageOrderInfosRightGoodsName {
   color: var(--g-text-black-color);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 22px;
 }
 
@@ -109,7 +116,7 @@
   color: var(--g-text-black-color);
   font-size: 16px;
   line-height: 16px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .pageOrderInfosRightGoodsPricesSp {
@@ -123,13 +130,13 @@
   color: var(--g-text-black-color);
   font-size: 12px;
   line-height: 12px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .pageOrderInfosRightGoodsPricesReal {
   color: var(--g-text-black-color);
   font-size: 16px;
   line-height: 16px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .pageOrderInfosRightGoodsPricesOriginal {
   margin-left: 8px;

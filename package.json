@@ -4,6 +4,8 @@
   "description": "Site.",
   "scripts": {
     "start": "ice start --speedup",
+    "mock": "serve -l 3344 public -C",
+    "s": "concurrently \"npm run mock\" \"npm start\"",
     "build": "ice build",
     "server": "serve -l 3456 build --no-request-logging",
     "server:pure": "serve -l 3456 build",
@@ -32,6 +34,7 @@
     "@types/node": "^18.11.17",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "concurrently": "^9.1.2",
     "eslint": "^8.35.0",
     "stylelint": "^15.2.0",
     "typescript": "5.8.3"

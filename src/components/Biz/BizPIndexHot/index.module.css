@@ -85,13 +85,12 @@
   margin: calc(var(--g-normal-padding) / 2) auto 0;
   color: red;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 22px;
 }
 .bizPIndexHotGoodsItemPriceSymbol {
   vertical-align: middle;
   font-size: 10px;
-  font-weight: 400;
 }
 
 .bizPIndexHotGoodsItemBuy {
