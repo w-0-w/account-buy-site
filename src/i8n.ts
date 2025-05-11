@@ -27,64 +27,21 @@ type T_I18N_Item =
   | 'biz-footer-notes-content-help'
   | 'xxx';
 
-export const i18n: Record<T_I18N_LNG, Record<T_I18N_Item, string>> = {
-  'en-US': {
-    'com-ok': 'ok',
-    'com-cancel': 'cancel',
-    'com-404': '404',
-    'com-404-desc': '404',
-    'biz-buy-btn': 'Buy',
-    'biz-goods-sales': 'Sales',
-    'biz-select-product': 'Select Product',
-    'biz-product-details': 'product details',
-    'biz-buy-now': '${price} Buy Now',
-    'biz-order-middle-desc':
-      'Due to third-party recharge risk control restrictions, USDT is currently the only recharge method available. Please transfer recharge to the corresponding wallet and the recharge will be automatically credited after successful recharge.',
-    'biz-goods-common-label-anquanzhifu': 'Secure and Fast Payment',
-    'biz-goods-common-label-jishifahuo': 'Instant Delivery',
-    'biz-goods-common-label-24-cs': '24h Online Service',
-    'biz-footer-notes-title-security': 'Information Security',
-    'biz-footer-notes-content-security': '-',
-    'biz-footer-notes-title-payment': 'Payment method',
-    'biz-footer-notes-content-payment': '-',
-    'biz-footer-notes-title-freight': 'Shipping Policy',
-    'biz-footer-notes-content-freight': '-',
-    'biz-footer-notes-title-returns': 'Returns & Exchange Policy',
-    'biz-footer-notes-content-returns': '-',
-    'biz-footer-notes-title-privacy-policy': 'Privacy Policy',
-    'biz-footer-notes-content-privacy-policy': '-',
-    'biz-footer-notes-title-help': 'User Guide',
-    'biz-footer-notes-content-help': '-',
-    xxx: '',
-  },
-  'zh-CN': {
-    'com-ok': '确认',
-    'com-cancel': '取消',
-    'com-404': '404',
-    'com-404-desc': '404',
-    'biz-buy-btn': '购买',
-    'biz-goods-sales': '月售',
-    'biz-select-product': '选择商品',
-    'biz-product-details': '商品详情',
-    'biz-buy-now': '¥{price} 立即购买',
-    'biz-order-middle-desc':
-      '由于第三方充值风控限制，目前只能USDT充值，请针对相应钱包进行转账充值，充值成功自动到账。',
-    'biz-goods-common-label-anquanzhifu': '安全快捷支付',
-    'biz-goods-common-label-jishifahuo': '即时发货',
-    'biz-goods-common-label-24-cs': '24小时客服',
-    'biz-footer-notes-title-security': '信息安全说明',
-    'biz-footer-notes-content-security':
-      '<p>加密技术： 平台采用先进的加密算法对用户的个人数据进行加密，无论是在数据传输过程中还是在存储时。例如，使用 AES-256 加密来保护用户的姓名、地址、支付信息等敏感数据，确保只有授权人员能够解密和访问这些信息。</p><p>严格的访问控制： 建立了严格的访问权限体系，只有经过授权的员工，并且在特定的业务需求下，才能访问用户的隐私数据。例如，客服人员在处理用户问题时，只能查看与问题相关的有限数据，且其操作会被详细记录和监控。</p><p>数据最小化原则： 平台只收集和存储为提供服务所必需的用户数据，避免过度收集用户的个人信息。比如，在用户注册时，仅要求提供必要的基本信息，如用户名/手机号和密码，而不会索要过多无关的个人细节。</p><p>定期的安全审计： 定期进行内部和外部的安全审计，以发现和解决可能存在的隐私漏洞。例如，聘请专业的安全机构对平台的隐私保护措施进行评估和测试。</p><p>用户教育与通知： 通过清晰明确的隐私政策向用户详细说明数据的收集、使用和保护方式，并在有重大隐私政策变更时及时通知用户。同时，提供用户隐私保护的教育资源，帮助用户增强自我保护意识。</p><p>匿名化和假名化处理： 在某些情况下，对用户数据进行匿名化或假名化处理，使得即使数据被意外泄露，也无法直接关联到具体的用户身份。</p><p>安全的服务器和基础设施： 投资于高度安全的服务器和网络基础设施，防止黑客攻击和数据窃取。例如，采用防火墙、入侵检测系统等防护措施来保障服务器的安全。</p><p>合规性遵循： 确保平台的隐私保护措施符合相关的法律法规，如《通用数据保护条例》（GDPR）等，以提供合法且可靠的隐私保护。</p>',
-    'biz-footer-notes-title-payment': '支付说明',
-    'biz-footer-notes-content-payment': '<p>支持支付宝，微信，币安等全球主流支付方式</p>',
-    'biz-footer-notes-title-freight': '运费说明',
-    'biz-footer-notes-content-freight':
-      '<p>本站点属于虚拟商品发货，不存在实际物料和运费情况<br>所有商品购买付款后，都会在付款后的页面展示购买的账密或者卡密，也可以在查单系统输入订单号查询<br><br>免邮条件说明：<br>本站点商品均免邮发货<br><br>不同国家/地区运费信息：<br>亚洲地区用户不需要运费<br>欧洲<span style="text-wrap: wrap;">地区用户不需要运费<br></span>非洲<span style="text-wrap: wrap;">地区用户不需要运费<br></span>大洋洲<span style="text-wrap: wrap;">地区用户不需要运费<br></span>美洲<span style="text-wrap: wrap;">地区用户不需要运费</span></p>',
-    'biz-footer-notes-title-returns': '退换货说明',
-    'biz-footer-notes-content-returns':
-      '<p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">感谢您对本平台的支持，平台退款政策遵循以下前提：</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">1.虚拟商品一经出售，非商品本身问题，不支持任何理由退款。<span microsoft=""font-size:=""color:=""style="box-sizing: border-box; margin: 0px; padding: 0px;">*商品本身问题解释：如购买的商品无法使用、信息错误、首次使用提示被封禁。</span></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">2.如遇到商品问题，可以直接联系平台客服进行解决，或者请致电/邮箱联系我们。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">3.<span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial;">如果您使用的是信用卡，PayPal会将退款存入您的信用卡中。如果您使用的是信用卡以外的资金来源，退款将会存入您的PayPal账户余额。如</span></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">果您既使用了信用卡又使用了其他来源，则信用卡支付的部分将存入信用卡，剩余部分将存入您的PayPal账户余额。请注意，存入信用卡的退款</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial;">最多可能需要30天才会显示在您的账单上,</span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bold; color: rgb(255, 0, 0); font-family: Arial;">具体时间以银行的处理时间为准</span></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bold; color: rgb(255, 0, 0);"><br style="box-sizing: border-box; margin: 0px; padding: 0px;"></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;"></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">常见问题</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">1.买错了/不想要了可以退款吗？<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">很抱歉这种情况是不支持退款的。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">2.退款的金额怎么给我？</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">订单退款成功后，会原路退回到您的支付账户里。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">3.退款需要手续费吗？</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">不需要任何费用，您可以放心。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;">退换货联系方式：<br>1，您可以联系在线客服申请退换货<br>2，您可以联系邮箱<a href="http://xiaoying202399@gmail.com"target="_blank">xiaoying202399@gmail.com</a>申请退换货<br><br><br>退换货运费说明：<br>不需要运费和手续费<br><br>退换货运费承担方：<br>我方承担退换货运费<br><br><br></p><p><br></p>',
-    'biz-footer-notes-title-privacy-policy': '隐私政策',
-    'biz-footer-notes-content-privacy-policy': `<p style=";line-height:19px">
+const XXX = {
+  'biz-footer-notes-title-security': '信息安全说明',
+  'biz-footer-notes-content-security':
+    '<p>加密技术： 平台采用先进的加密算法对用户的个人数据进行加密，无论是在数据传输过程中还是在存储时。例如，使用 AES-256 加密来保护用户的姓名、地址、支付信息等敏感数据，确保只有授权人员能够解密和访问这些信息。</p><p>严格的访问控制： 建立了严格的访问权限体系，只有经过授权的员工，并且在特定的业务需求下，才能访问用户的隐私数据。例如，客服人员在处理用户问题时，只能查看与问题相关的有限数据，且其操作会被详细记录和监控。</p><p>数据最小化原则： 平台只收集和存储为提供服务所必需的用户数据，避免过度收集用户的个人信息。比如，在用户注册时，仅要求提供必要的基本信息，如用户名/手机号和密码，而不会索要过多无关的个人细节。</p><p>定期的安全审计： 定期进行内部和外部的安全审计，以发现和解决可能存在的隐私漏洞。例如，聘请专业的安全机构对平台的隐私保护措施进行评估和测试。</p><p>用户教育与通知： 通过清晰明确的隐私政策向用户详细说明数据的收集、使用和保护方式，并在有重大隐私政策变更时及时通知用户。同时，提供用户隐私保护的教育资源，帮助用户增强自我保护意识。</p><p>匿名化和假名化处理： 在某些情况下，对用户数据进行匿名化或假名化处理，使得即使数据被意外泄露，也无法直接关联到具体的用户身份。</p><p>安全的服务器和基础设施： 投资于高度安全的服务器和网络基础设施，防止黑客攻击和数据窃取。例如，采用防火墙、入侵检测系统等防护措施来保障服务器的安全。</p><p>合规性遵循： 确保平台的隐私保护措施符合相关的法律法规，如《通用数据保护条例》（GDPR）等，以提供合法且可靠的隐私保护。</p>',
+  'biz-footer-notes-title-payment': '支付说明',
+  'biz-footer-notes-content-payment':
+    '<p>支持支付宝，微信，币安等全球主流支付方式</p>',
+  'biz-footer-notes-title-freight': '运费说明',
+  'biz-footer-notes-content-freight':
+    '<p>本站点属于虚拟商品发货，不存在实际物料和运费情况<br>所有商品购买付款后，都会在付款后的页面展示购买的账密或者卡密，也可以在查单系统输入订单号查询<br><br>免邮条件说明：<br>本站点商品均免邮发货<br><br>不同国家/地区运费信息：<br>亚洲地区用户不需要运费<br>欧洲<span style="text-wrap: wrap;">地区用户不需要运费<br></span>非洲<span style="text-wrap: wrap;">地区用户不需要运费<br></span>大洋洲<span style="text-wrap: wrap;">地区用户不需要运费<br></span>美洲<span style="text-wrap: wrap;">地区用户不需要运费</span></p>',
+  'biz-footer-notes-title-returns': '退换货说明',
+  'biz-footer-notes-content-returns':
+    '<p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">感谢您对本平台的支持，平台退款政策遵循以下前提：</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">1.虚拟商品一经出售，非商品本身问题，不支持任何理由退款。<span microsoft=""font-size:=""color:=""style="box-sizing: border-box; margin: 0px; padding: 0px;">*商品本身问题解释：如购买的商品无法使用、信息错误、首次使用提示被封禁。</span></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">2.如遇到商品问题，可以直接联系平台客服进行解决，或者请致电/邮箱联系我们。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">3.<span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial;">如果您使用的是信用卡，PayPal会将退款存入您的信用卡中。如果您使用的是信用卡以外的资金来源，退款将会存入您的PayPal账户余额。如</span></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">果您既使用了信用卡又使用了其他来源，则信用卡支付的部分将存入信用卡，剩余部分将存入您的PayPal账户余额。请注意，存入信用卡的退款</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial;">最多可能需要30天才会显示在您的账单上,</span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bold; color: rgb(255, 0, 0); font-family: Arial;">具体时间以银行的处理时间为准</span></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bold; color: rgb(255, 0, 0);"><br style="box-sizing: border-box; margin: 0px; padding: 0px;"></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;"></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">常见问题</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">1.买错了/不想要了可以退款吗？<br style="box-sizing: border-box; margin: 0px; padding: 0px;"></span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">很抱歉这种情况是不支持退款的。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">2.退款的金额怎么给我？</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">订单退款成功后，会原路退回到您的支付账户里。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">3.退款需要手续费吗？</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;"><span microsoft=""style="box-sizing: border-box; margin: 0px; padding: 0px;">不需要任何费用，您可以放心。</span></p><p style="box-sizing: border-box; margin: 0px 0px 1em; padding: 0px;">退换货联系方式：<br>1，您可以联系在线客服申请退换货<br>2，您可以联系邮箱<a href="http://xiaoying202399@gmail.com"target="_blank">xiaoying202399@gmail.com</a>申请退换货<br><br><br>退换货运费说明：<br>不需要运费和手续费<br><br>退换货运费承担方：<br>我方承担退换货运费<br><br><br></p><p><br></p>',
+  'biz-footer-notes-title-privacy-policy': '隐私政策',
+  'biz-footer-notes-content-privacy-policy': `<p style=";line-height:19px">
                                     <span style=";font-family:Calibri;font-size:16px">
                                         <span style="font-family:宋体">我们收集的信息</span>
                                     </span>
@@ -1114,9 +1071,58 @@ export const i18n: Record<T_I18N_LNG, Record<T_I18N_Item, string>> = {
                                 <p style=";line-height:19px">
                                     <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
                                 </p>`,
-    'biz-footer-notes-title-help': '帮助说明',
-    'biz-footer-notes-content-help':
-      '<p><span style="text-wrap-style: initial;">1.平台内的礼品卡是正规可囤的吗？&nbsp;是的，我们的礼品卡都是线下实体店购买。&nbsp;</span></p><p><span style="text-wrap-style: initial;">2.海外账号可以使用多久？&nbsp;正常的操作是可以长时间使用的，具体要以官方风控为准。&nbsp;</span><br></p><p><span style="text-wrap-style: initial;">3.Steam充值卡会导致封号吗？&nbsp;不会，充值卡都是正规途径充值形成的卡密。</span><br></p><p><span style="text-wrap-style: initial;">4.提取了卡密还可以申请退款吗？&nbsp;如果是商品的问题，支持退款。如果核实后商品没有问题，平台拒绝退款~</span><br></p><p><br style="text-wrap-mode: wrap;"></p><p><br></p>',
+  'biz-footer-notes-title-help': '帮助说明',
+  'biz-footer-notes-content-help':
+    '<p><span style="text-wrap-style: initial;">1.平台内的礼品卡是正规可囤的吗？&nbsp;是的，我们的礼品卡都是线下实体店购买。&nbsp;</span></p><p><span style="text-wrap-style: initial;">2.海外账号可以使用多久？&nbsp;正常的操作是可以长时间使用的，具体要以官方风控为准。&nbsp;</span><br></p><p><span style="text-wrap-style: initial;">3.Steam充值卡会导致封号吗？&nbsp;不会，充值卡都是正规途径充值形成的卡密。</span><br></p><p><span style="text-wrap-style: initial;">4.提取了卡密还可以申请退款吗？&nbsp;如果是商品的问题，支持退款。如果核实后商品没有问题，平台拒绝退款~</span><br></p><p><br style="text-wrap-mode: wrap;"></p><p><br></p>',
+};
+
+export const i18n: Record<T_I18N_LNG, Record<T_I18N_Item, string>> = {
+  'en-US': {
+    'com-ok': 'ok',
+    'com-cancel': 'cancel',
+    'com-404': '404',
+    'com-404-desc': '404',
+    'biz-buy-btn': 'Buy',
+    'biz-goods-sales': 'Sales',
+    'biz-select-product': 'Select Product',
+    'biz-product-details': 'product details',
+    'biz-buy-now': '${price} Buy Now',
+    'biz-order-middle-desc':
+      'Due to third-party recharge risk control restrictions, USDT is currently the only recharge method available. Please transfer recharge to the corresponding wallet and the recharge will be automatically credited after successful recharge.',
+    'biz-goods-common-label-anquanzhifu': 'Secure and Fast Payment',
+    'biz-goods-common-label-jishifahuo': 'Instant Delivery',
+    'biz-goods-common-label-24-cs': '24h Online Service',
+    // 'biz-footer-notes-title-security': 'Information Security',
+    // 'biz-footer-notes-content-security': '-',
+    // 'biz-footer-notes-title-payment': 'Payment method',
+    // 'biz-footer-notes-content-payment': '-',
+    // 'biz-footer-notes-title-freight': 'Shipping Policy',
+    // 'biz-footer-notes-content-freight': '-',
+    // 'biz-footer-notes-title-returns': 'Returns & Exchange Policy',
+    // 'biz-footer-notes-content-returns': '-',
+    // 'biz-footer-notes-title-privacy-policy': 'Privacy Policy',
+    // 'biz-footer-notes-content-privacy-policy': '-',
+    // 'biz-footer-notes-title-help': 'User Guide',
+    // 'biz-footer-notes-content-help': '-',
+    ...XXX,
+    xxx: '',
+  },
+  'zh-CN': {
+    'com-ok': '确认',
+    'com-cancel': '取消',
+    'com-404': '404',
+    'com-404-desc': '404',
+    'biz-buy-btn': '购买',
+    'biz-goods-sales': '月售',
+    'biz-select-product': '选择商品',
+    'biz-product-details': '商品详情',
+    'biz-buy-now': '¥{price} 立即购买',
+    'biz-order-middle-desc':
+      '由于第三方充值风控限制，目前只能USDT充值，请针对相应钱包进行转账充值，充值成功自动到账。',
+    'biz-goods-common-label-anquanzhifu': '安全快捷支付',
+    'biz-goods-common-label-jishifahuo': '即时发货',
+    'biz-goods-common-label-24-cs': '24小时客服',
+    ...XXX,
     xxx: '',
   },
 };
