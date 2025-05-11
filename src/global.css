@@ -24,6 +24,7 @@
   --g-page-padding: 22px;
 
   /* reset next start */
+  --loading-dot-color: var(--g-main-red-color);
   --shell-dark-header-background: #000000;
   --tag-secondary-border-color-hover: var(--g-main-red-color);
   --tag-secondary-border-color: var(--g-main-red-color);
