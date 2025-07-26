@@ -6,6 +6,7 @@ import i18n from '@ice/plugin-i18n';
 const minify = process.env.NODE_ENV === 'production' ? 'swc' : false;
 export default defineConfig(() => ({
   ssg: false,
+  codeSplitting: false,
   minify,
   plugins: [
     i18n({
