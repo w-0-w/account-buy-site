@@ -7,6 +7,7 @@ const minify = process.env.NODE_ENV === 'production' ? 'swc' : false;
 export default defineConfig(() => ({
   ssg: false,
   // codeSplitting: false,
+  hash: 'contenthash',
   minify,
   plugins: [
     i18n({
