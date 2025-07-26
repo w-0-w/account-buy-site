@@ -1,5 +1,3 @@
-import { Message } from '@alifd/next';
-
 import SvgCS from '@/assets/svg/cs.svg';
 
 import styles from './index.module.css';
