@@ -6,7 +6,7 @@ import { i18n } from '@/i8n';
 import { useBiz } from '@/hooks';
 import { BizLogo } from '@/components/Biz/BizLogo';
 import { BizLangSwitch } from '@/components/Biz/BizLangSwitch';
-import { BizCS } from '@/components/Biz/BizCS';
+import BizCS from '@/components/Biz/BizCS';
 import Footer from '@/components/Footer';
 
 export default function Layout() {

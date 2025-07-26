@@ -2,7 +2,7 @@ import SvgCS from '@/assets/svg/cs.svg';
 
 import styles from './index.module.css';
 
-export const BizCS = () => {
+const BizCS = () => {
   return (
     <div className={styles.bizCSWrap}>
       <a
@@ -18,3 +18,5 @@ export const BizCS = () => {
     </div>
   );
 };
+
+export default BizCS;
